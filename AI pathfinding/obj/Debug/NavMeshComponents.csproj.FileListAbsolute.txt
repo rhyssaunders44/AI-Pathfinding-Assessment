@@ -1,0 +1,2 @@
+C:\Users\Rhys\Documents\GitHub\AI-Pathfinding-Assessment\AI pathfinding\obj\Debug\NavMeshComponents.csprojAssemblyReference.cache
+C:\Users\Rhys\Documents\GitHub\AI-Pathfinding-Assessment\AI pathfinding\obj\Debug\NavMeshComponents.csproj.CoreCompileInputs.cache
