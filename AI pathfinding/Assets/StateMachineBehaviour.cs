@@ -55,6 +55,7 @@ public class StateMachineBehaviour : MonoBehaviour
     }
 
 
+    //all of the available states the state machine has
     public void SetState(States currentState)
     {
             switchStates = false;   
@@ -100,6 +101,8 @@ public class StateMachineBehaviour : MonoBehaviour
         }
     }
 
+
+    //locates the next point.
     public void AquirePoint(GameObject[] target, int lastobject, int searchtype)
     {
         Debug.Log("LastObject" + lastobject);
@@ -108,26 +111,32 @@ public class StateMachineBehaviour : MonoBehaviour
         for (int i = 0; i < target.Length; i++)
         {
 
+            // if the target is active in the scene
             if (target[i].activeSelf)
             {
                 distancetoobjects[i] = Vector3.Distance(agent.transform.position, target[i].transform.position);
             }
             else
             {
+                //if not shove it down the priority list
                 distancetoobjects[i] = 10000;
             }
 
             if(searchtype == 0)
             {
+                //if its a visited door shove it down the priority list
                 if (visited[i])
                     distancetoobjects[i] += 1000;
             }
 
             if(i == lastobject)
             {
+                //if it was the last object visited shove it down the priority list
                 distancetoobjects[i] += 1000;
             }
 
+            // the closest available object is the target
+            // i wishi i could have used the calculate path but i couldnt get it to work
             if ((distancetoobjects[i] < smallest) && distancetoobjects[i] != 0)
             {
                 smallest = distancetoobjects[i];
@@ -158,6 +167,8 @@ public class StateMachineBehaviour : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        //checks to see if the AI is stuck, currently over active as the exit from fleeing doesnt work as intended
+        //and it will always go for a switch after but it still works.
         if (Vector3.Distance(agent.transform.position, lastPosition) < minMoveDistance )
         {
             if(lastState == States.Fleeing)
@@ -185,12 +196,13 @@ public class StateMachineBehaviour : MonoBehaviour
         yield return null;
     }
 
-
+    // our ai states
     public enum States
     {
         Searching, Switching, Escaping, Fleeing, Idle
     }
 
+    //the various triggers the AI may hit, and what to do if it does hit
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
@@ -241,6 +253,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
     }
 
+    //if it hits the bully and cant escape keep trying to set a new point to run to
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "bully")
@@ -250,7 +263,7 @@ public class StateMachineBehaviour : MonoBehaviour
         }
     }
 
-
+    //be free to run hom
     public IEnumerator Return()
     {
         agent.SetDestination(exit[1].transform.position);
@@ -266,12 +279,14 @@ public class StateMachineBehaviour : MonoBehaviour
         yield break;
     }
 
+    //interactable 
     public void ReturnButton()
     {
         StartCoroutine(routine: Return());
         StartCoroutine(routine: PositionCheck());
     }
 
+    //run my boy
     public IEnumerator Flee()
     {
         if(skeleState != States.Fleeing)
