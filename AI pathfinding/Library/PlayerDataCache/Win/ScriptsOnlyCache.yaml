@@ -16,10 +16,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -54,21 +52,21 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1502}
     - Class: 114
-      Script: {instanceID: 1542}
+      Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1698}
     - Class: 114
-      Script: {instanceID: 1942}
+      Script: {instanceID: 1950}
     - Class: 114
-      Script: {instanceID: 2244}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2326}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 2442}
+      Script: {instanceID: 2446}
     - Class: 114
-      Script: {instanceID: 2512}
+      Script: {instanceID: 2516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -125,37 +123,37 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1492}
+      Script: {instanceID: 1500}
     - Class: 114
-      Script: {instanceID: 1494}
+      Script: {instanceID: 1502}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1524}
     - Class: 114
-      Script: {instanceID: 1542}
+      Script: {instanceID: 1550}
     - Class: 114
-      Script: {instanceID: 1690}
+      Script: {instanceID: 1698}
     - Class: 114
-      Script: {instanceID: 1748}
+      Script: {instanceID: 1756}
     - Class: 114
-      Script: {instanceID: 1848}
+      Script: {instanceID: 1856}
     - Class: 114
-      Script: {instanceID: 1942}
+      Script: {instanceID: 1950}
     - Class: 114
-      Script: {instanceID: 2128}
+      Script: {instanceID: 2136}
     - Class: 114
-      Script: {instanceID: 2146}
+      Script: {instanceID: 2154}
     - Class: 114
-      Script: {instanceID: 2194}
+      Script: {instanceID: 2202}
     - Class: 114
-      Script: {instanceID: 2244}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2326}
+      Script: {instanceID: 2334}
     - Class: 114
-      Script: {instanceID: 2408}
+      Script: {instanceID: 2416}
     - Class: 114
-      Script: {instanceID: 2442}
+      Script: {instanceID: 2446}
     - Class: 114
-      Script: {instanceID: 2512}
+      Script: {instanceID: 2516}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -523,7 +521,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 0bc72edd62a088048315f5bc4f695cd8
+      Hash: c5cf90671cdc5996c92bc931292ab089
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: StateMachineBehaviour
